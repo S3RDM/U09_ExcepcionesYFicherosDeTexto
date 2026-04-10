@@ -12,7 +12,7 @@ public class Main {
         boolean valido = false;
         
         do{
-            System.out.print("Introducir numero: ");
+            System.out.print("Introducir número: ");
             try{
                 num = sc.nextInt();
                 valido = true;
