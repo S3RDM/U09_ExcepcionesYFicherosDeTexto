@@ -11,7 +11,6 @@ public class Main {
         try{
             out = new BufferedWriter(new FileWriter (fichero));
             out2 = new BufferedWriter(new FileWriter (fichero, true));
-
             String linea1 = "En un lugar de La Mancha,";
             String linea2 = "de cuyo nombre no quiero acordarme";
             
