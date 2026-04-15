@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args){
         BufferedWriter out = null;
         BufferedWriter out2 = null;
-
         try{
             out = new BufferedWriter(new FileWriter (fichero));
             out2 = new BufferedWriter(new FileWriter (fichero, true));
