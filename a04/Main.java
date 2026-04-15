@@ -5,7 +5,6 @@ public class Main {
     static final String fichero = "C:\\dam\\prog\\code\\NumerosReales.txt";
     
     public static void main(String[] args){
-        String texto = "";
         BufferedReader in = null;
         double suma = 0;
         int cont = 0;
