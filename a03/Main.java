@@ -6,26 +6,16 @@ public class Main {
         
     public static void main(String[] args){
         String texto = "";
-        BufferedReader in = null;
 
-    try{
-        in = new BufferedReader(new FileReader(fichero));
-        String linea = in.readLine();
-        while(linea != null){
-            texto = texto + linea + '\n';
-            linea = in.readLine();
-        }
-    }catch(IOException e){
-        System.out.println(e.getMessage());
-    }finally{
-        if(in != null){
-            try{
-                in.close();
-            }catch(IOException e){
-                System.out.println(e);
+        try(BufferedReader in = new BufferedReader(new FileReader(fichero))){
+            String linea = in.readLine();
+            while(linea != null){
+                texto = texto + linea + '\n';
+                linea = in.readLine();
             }
+        }catch(IOException e){
+            System.out.println(e.getMessage());
         }
-    }
-    System.out.println(texto);
+        System.out.println(texto);
     }
 }
