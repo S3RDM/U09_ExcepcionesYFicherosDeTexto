@@ -5,12 +5,9 @@ public class Main {
     static final String fichero = "C:\\dam\\prog\\code\\NumerosReales.txt";
     
     public static void main(String[] args){
-        BufferedReader in = null;
         double suma = 0;
-        int cont = 0;
-        
-        try{
-            in = new BufferedReader(new FileReader(fichero));
+        int cont = 0;        
+        try(BufferedReader in = new BufferedReader(new FileReader(fichero))){
             String linea = in.readLine();
             if(linea != null){
                 String[] numeros = linea.split(" ");
@@ -26,14 +23,6 @@ public class Main {
             System.out.println("Media: " + media);
         }catch(IOException e){
             System.out.println(e);
-        }finally{
-            if(in != null){
-                try{
-                    in.close();
-                }catch(IOException e){
-                    System.out.println(e);
-                }
-            }
         }
     }
 }
