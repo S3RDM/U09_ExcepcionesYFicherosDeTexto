@@ -6,26 +6,15 @@ public class Main {
         
     public static void main(String[] args){
         String texto = "";
-        FileReader in = null;
-
-    try{
-        in = new FileReader(fichero);
-        int c = in.read();
-        while (c != -1){
-            texto = texto + (char) c;
-            c = in.read();
-        }
-    }catch(IOException e){
-        System.out.println(e.getMessage());
-    }finally{
-        if(in != null){
-            try{
-                in.close();
-            }catch(IOException e){
-                System.out.println(e);
+        try(FileReader in = new FileReader(fichero)){
+            int c = in.read();
+            while (c != -1){
+                texto = texto + (char) c;
+                c = in.read();
             }
+        }catch(IOException e){
+            System.out.println(e.getMessage());
         }
-    }
-    System.out.println(texto);
+        System.out.println(texto);
     }
 }
